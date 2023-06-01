@@ -28,6 +28,7 @@ public class Main {
             String sql = "SELECT * FROM users WHERE username = '" + userInput + "'";
 
             PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, userInput);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
